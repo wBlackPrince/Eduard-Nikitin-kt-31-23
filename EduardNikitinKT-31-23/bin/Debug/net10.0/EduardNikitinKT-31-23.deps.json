@@ -1,0 +1,127 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v10.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v10.0": {
+      "EduardNikitinKT-31-23/1.0.0": {
+        "dependencies": {
+          "Microsoft.AspNetCore.OpenApi": "10.0.11",
+          "NLog.Web.AspNetCore": "6.2.0",
+          "Swashbuckle.AspNetCore.SwaggerUI": "10.2.3"
+        },
+        "runtime": {
+          "EduardNikitinKT-31-23.dll": {}
+        }
+      },
+      "Microsoft.AspNetCore.OpenApi/10.0.11": {
+        "dependencies": {
+          "Microsoft.OpenApi": "2.7.5"
+        },
+        "runtime": {
+          "lib/net10.0/Microsoft.AspNetCore.OpenApi.dll": {
+            "assemblyVersion": "10.0.11.0",
+            "fileVersion": "10.0.1126.37416"
+          }
+        }
+      },
+      "Microsoft.OpenApi/2.7.5": {
+        "runtime": {
+          "lib/net8.0/Microsoft.OpenApi.dll": {
+            "assemblyVersion": "2.7.5.0",
+            "fileVersion": "2.7.5.0"
+          }
+        }
+      },
+      "NLog/6.2.0": {
+        "runtime": {
+          "lib/netstandard2.1/NLog.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.2.0.5698"
+          }
+        }
+      },
+      "NLog.Extensions.Logging/6.2.0": {
+        "dependencies": {
+          "NLog": "6.2.0"
+        },
+        "runtime": {
+          "lib/net10.0/NLog.Extensions.Logging.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.2.0.887"
+          }
+        }
+      },
+      "NLog.Web.AspNetCore/6.2.0": {
+        "dependencies": {
+          "NLog.Extensions.Logging": "6.2.0"
+        },
+        "runtime": {
+          "lib/net10.0/NLog.Web.AspNetCore.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.2.0.1474"
+          }
+        }
+      },
+      "Swashbuckle.AspNetCore.SwaggerUI/10.2.3": {
+        "runtime": {
+          "lib/net10.0/Swashbuckle.AspNetCore.SwaggerUI.dll": {
+            "assemblyVersion": "10.2.3.0",
+            "fileVersion": "10.2.3.2721"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "EduardNikitinKT-31-23/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Microsoft.AspNetCore.OpenApi/10.0.11": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-R/1EATnPLU+gRfB6lwVkMcymmyAY5ppBBdRN/5lhNEiT3xP1sWccuSFkU/f1lQvN/WgRq5Vn8AhCdE3fqgsL/w==",
+      "path": "microsoft.aspnetcore.openapi/10.0.11",
+      "hashPath": "microsoft.aspnetcore.openapi.10.0.11.nupkg.sha512"
+    },
+    "Microsoft.OpenApi/2.7.5": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-0FA67RSnRM4tcBKqiqVu/HPdZ9+QOKbmeRjxRUGTCjPU4C0bmUhd97Dso7Yild5P7nOV6GxJ2xrK0Kv/O9xp0w==",
+      "path": "microsoft.openapi/2.7.5",
+      "hashPath": "microsoft.openapi.2.7.5.nupkg.sha512"
+    },
+    "NLog/6.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-CxK6AjM1Wy3hM8YeBpLJJuB/JdoeIVvX0/fMTWeIXD917UozCtzv6cZDamevugeEaBBF0TIatfcNX2iJHI0Cew==",
+      "path": "nlog/6.2.0",
+      "hashPath": "nlog.6.2.0.nupkg.sha512"
+    },
+    "NLog.Extensions.Logging/6.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ZNitUMsNUir+P4A87OhfItgeIiodwSG3Iq15LuNk/Wqjjm2ho3OptjykpWJmFs/Zlgr41XmUB3XbNvhBoCBUrg==",
+      "path": "nlog.extensions.logging/6.2.0",
+      "hashPath": "nlog.extensions.logging.6.2.0.nupkg.sha512"
+    },
+    "NLog.Web.AspNetCore/6.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-YdXkeY7nvzTUmZR5+tHNMNhmHopepFMGRrkkLNbAiZI3Bd7kz6wTIfegAga4FLKjZryXilDAwx+Rk1JEeiHn/w==",
+      "path": "nlog.web.aspnetcore/6.2.0",
+      "hashPath": "nlog.web.aspnetcore.6.2.0.nupkg.sha512"
+    },
+    "Swashbuckle.AspNetCore.SwaggerUI/10.2.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-nthWONRs/FJ4yyG206g1cC52WEG8EqrjuMWjGdR+5XG7lbjFto6NqcI9EMICgVFom/UivIjUVwI76ZHbHwTPfQ==",
+      "path": "swashbuckle.aspnetcore.swaggerui/10.2.3",
+      "hashPath": "swashbuckle.aspnetcore.swaggerui.10.2.3.nupkg.sha512"
+    }
+  }
+}

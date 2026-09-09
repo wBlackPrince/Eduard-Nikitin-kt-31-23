@@ -1,11 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "oUFAjHLlcYw=",
+  "dgSpecHash": "/uE+UuX3VaA=",
   "success": true,
   "projectFilePath": "C:\\Users\\maste\\source\\repos\\Eduard-Nikitin-kt-31-23\\EduardNikitinKT-31-23\\EduardNikitinKT-31-23.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\maste\\.nuget\\packages\\microsoft.aspnetcore.openapi\\10.0.11\\microsoft.aspnetcore.openapi.10.0.11.nupkg.sha512",
-    "C:\\Users\\maste\\.nuget\\packages\\microsoft.openapi\\2.7.5\\microsoft.openapi.2.7.5.nupkg.sha512"
+    "C:\\Users\\maste\\.nuget\\packages\\microsoft.openapi\\2.7.5\\microsoft.openapi.2.7.5.nupkg.sha512",
+    "C:\\Users\\maste\\.nuget\\packages\\nlog\\6.2.0\\nlog.6.2.0.nupkg.sha512",
+    "C:\\Users\\maste\\.nuget\\packages\\nlog.extensions.logging\\6.2.0\\nlog.extensions.logging.6.2.0.nupkg.sha512",
+    "C:\\Users\\maste\\.nuget\\packages\\nlog.web.aspnetcore\\6.2.0\\nlog.web.aspnetcore.6.2.0.nupkg.sha512",
+    "C:\\Users\\maste\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\10.2.3\\swashbuckle.aspnetcore.swaggerui.10.2.3.nupkg.sha512"
   ],
   "logs": []
 }
