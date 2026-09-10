@@ -1,3 +1,5 @@
+using EduardNikitinKT_31_23.db;
+using Microsoft.EntityFrameworkCore;
 using NLog;
 using NLog.Web;
 
@@ -9,6 +11,10 @@ try
     // Add services to the container.
     builder.Services.AddControllers();
     builder.Services.AddOpenApi();
+
+    builder.Services.AddDbContext<StudentDbContext>(
+        options => options
+            .UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
     var app = builder.Build();
 

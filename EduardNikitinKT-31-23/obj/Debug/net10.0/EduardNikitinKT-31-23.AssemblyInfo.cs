@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("EduardNikitinKT-31-23")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+987f339c4084df9f2491cda40b70a256f1e7ae78")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e6bcc60e69866f95f5534739503ce5dfb2e13d5b")]
 [assembly: System.Reflection.AssemblyProductAttribute("EduardNikitinKT-31-23")]
 [assembly: System.Reflection.AssemblyTitleAttribute("EduardNikitinKT-31-23")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
