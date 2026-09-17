@@ -21,27 +21,125 @@ namespace EduardNikitinKT_31_23.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
+            modelBuilder.Entity("EduardNikitinKT_31_23.Models.Discipline", b =>
+                {
+                    b.Property<int>("DisciplineId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasColumnName("c_discipline_id");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("DisciplineId"));
+
+                    b.Property<bool>("IsDeleted")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("boolean")
+                        .HasDefaultValue(false)
+                        .HasColumnName("c_is_deleted");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("varchar")
+                        .HasColumnName("c_discipline_name");
+
+                    b.HasKey("DisciplineId")
+                        .HasName("pk_cd_discipline_discipline_id");
+
+                    b.ToTable("cd_discipline", (string)null);
+                });
+
+            modelBuilder.Entity("EduardNikitinKT_31_23.Models.Grade", b =>
+                {
+                    b.Property<int>("GradeId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasColumnName("c_grade_id");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("GradeId"));
+
+                    b.Property<int>("DisciplineId")
+                        .HasColumnType("integer")
+                        .HasColumnName("f_discipline_id");
+
+                    b.Property<int>("StudentId")
+                        .HasColumnType("integer")
+                        .HasColumnName("f_student_id");
+
+                    b.Property<int>("Value")
+                        .HasColumnType("integer")
+                        .HasColumnName("c_grade_value");
+
+                    b.HasKey("GradeId")
+                        .HasName("pk_cd_grade_grade_id");
+
+                    b.HasIndex("DisciplineId")
+                        .HasDatabaseName("idx_cd_grade_f_discipline_id");
+
+                    b.HasIndex("StudentId")
+                        .HasDatabaseName("idx_cd_grade_f_student_id");
+
+                    b.ToTable("cd_grade", (string)null);
+                });
+
             modelBuilder.Entity("EduardNikitinKT_31_23.Models.Group", b =>
                 {
                     b.Property<int>("GroupId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("integer")
-                        .HasColumnName("c_group_id")
-                        .HasComment("идентификатор группы");
+                        .HasColumnName("c_group_id");
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("GroupId"));
+
+                    b.Property<int>("Course")
+                        .HasColumnType("integer")
+                        .HasColumnName("c_course");
 
                     b.Property<string>("GroupName")
                         .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("varchar")
-                        .HasColumnName("c_group_name")
-                        .HasComment("название группы");
+                        .HasColumnName("c_group_name");
+
+                    b.Property<int>("SpecialityId")
+                        .HasColumnType("integer")
+                        .HasColumnName("f_speciality_id");
 
                     b.HasKey("GroupId")
                         .HasName("pk_cd_group_group_id");
 
+                    b.HasIndex("SpecialityId")
+                        .HasDatabaseName("idx_cd_group_f_speciality_id");
+
                     b.ToTable("cd_group", (string)null);
+                });
+
+            modelBuilder.Entity("EduardNikitinKT_31_23.Models.Speciality", b =>
+                {
+                    b.Property<int>("SpecialityId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasColumnName("c_speciality_id");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("SpecialityId"));
+
+                    b.Property<int>("Code")
+                        .HasColumnType("integer")
+                        .HasColumnName("c_speciality_code");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasMaxLength(150)
+                        .HasColumnType("varchar")
+                        .HasColumnName("c_speciality_title");
+
+                    b.HasKey("SpecialityId")
+                        .HasName("pk_cd_speciality_speciality_id");
+
+                    b.HasIndex("Code")
+                        .IsUnique()
+                        .HasDatabaseName("idx_cd_speciality_code");
+
+                    b.ToTable("cd_speciality", (string)null);
                 });
 
             modelBuilder.Entity("EduardNikitinKT_31_23.Models.Student", b =>
@@ -49,8 +147,7 @@ namespace EduardNikitinKT_31_23.Migrations
                     b.Property<int>("StudentId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("integer")
-                        .HasColumnName("c_student_id")
-                        .HasComment("идентификатор студента");
+                        .HasColumnName("c_student_id");
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("StudentId"));
 
@@ -58,12 +155,17 @@ namespace EduardNikitinKT_31_23.Migrations
                         .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("varchar")
-                        .HasColumnName("c_student_firstname")
-                        .HasComment("имя студента");
+                        .HasColumnName("c_student_firstname");
 
                     b.Property<int>("GroupId")
                         .HasColumnType("integer")
                         .HasColumnName("f_group_id");
+
+                    b.Property<bool>("IsDeleted")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("boolean")
+                        .HasDefaultValue(false)
+                        .HasColumnName("c_is_deleted");
 
                     b.Property<string>("LastName")
                         .IsRequired()
@@ -71,18 +173,42 @@ namespace EduardNikitinKT_31_23.Migrations
                         .HasColumnType("varchar")
                         .HasColumnName("c_student_lastname");
 
-                    b.Property<string>("MiddleName")
-                        .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("varchar")
-                        .HasColumnName("c_student_middlename");
-
                     b.HasKey("StudentId")
                         .HasName("pk_cd_student_student_id");
 
-                    b.HasIndex(new[] { "GroupId" }, "idx_cd_student_fk_f_group_id");
+                    b.HasIndex("GroupId")
+                        .HasDatabaseName("idx_cd_student_f_group_id");
 
                     b.ToTable("cd_student", (string)null);
+                });
+
+            modelBuilder.Entity("EduardNikitinKT_31_23.Models.Grade", b =>
+                {
+                    b.HasOne("EduardNikitinKT_31_23.Models.Discipline", "Discipline")
+                        .WithMany()
+                        .HasForeignKey("DisciplineId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired()
+                        .HasConstraintName("fk_cd_grade_discipline");
+
+                    b.HasOne("EduardNikitinKT_31_23.Models.Student", null)
+                        .WithMany()
+                        .HasForeignKey("StudentId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired()
+                        .HasConstraintName("fk_cd_grade_student");
+
+                    b.Navigation("Discipline");
+                });
+
+            modelBuilder.Entity("EduardNikitinKT_31_23.Models.Group", b =>
+                {
+                    b.HasOne("EduardNikitinKT_31_23.Models.Speciality", null)
+                        .WithMany()
+                        .HasForeignKey("SpecialityId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired()
+                        .HasConstraintName("fk_cd_group_speciality");
                 });
 
             modelBuilder.Entity("EduardNikitinKT_31_23.Models.Student", b =>
@@ -90,9 +216,9 @@ namespace EduardNikitinKT_31_23.Migrations
                     b.HasOne("EduardNikitinKT_31_23.Models.Group", "Group")
                         .WithMany("Students")
                         .HasForeignKey("GroupId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired()
-                        .HasConstraintName("fk_f_group_id");
+                        .HasConstraintName("fk_cd_student_group");
 
                     b.Navigation("Group");
                 });

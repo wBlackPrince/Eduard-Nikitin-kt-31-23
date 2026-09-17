@@ -14,8 +14,7 @@ namespace EduardNikitinKT_31_23.db
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             // Добавляем конфигурации
-            modelBuilder.ApplyConfiguration(new StudentConfiguration());
-            modelBuilder.ApplyConfiguration(new GroupConfiguration());
+            modelBuilder.ApplyConfigurationsFromAssembly(typeof(StudentDbContext).Assembly);
         }
 
         public StudentDbContext(DbContextOptions<StudentDbContext> options)
