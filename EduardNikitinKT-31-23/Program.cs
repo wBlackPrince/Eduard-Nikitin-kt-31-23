@@ -1,4 +1,5 @@
 using EduardNikitinKT_31_23.db;
+using EduardNikitinKT_31_23.Middlewares;
 using EduardNikitinKT_31_23.ServiceExtensions;
 using Microsoft.EntityFrameworkCore;
 using NLog;
@@ -33,6 +34,8 @@ try
             options.SwaggerEndpoint("/openapi/v1.json", "API v1");
         });
     }
+
+    app.UseMiddleware<ExceptionHandlerMiddleware>();
 
     app.UseAuthorization();
     app.MapControllers();
